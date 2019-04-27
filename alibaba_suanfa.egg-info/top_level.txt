@@ -1,0 +1,7 @@
+basic_algorithm
+chartered_price_crf
+datas
+lda_demo
+linear_regression
+nb
+word2vec

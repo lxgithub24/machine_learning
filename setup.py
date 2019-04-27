@@ -17,7 +17,7 @@ setup(
     license='BSD License',
     packages=find_packages(),
     platforms=["all"],
-    url='<项目的网址，我一般都是github的url>',
+    url='https://github.com/lxgithub24/leetcode.git',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Operating System :: OS Independent',
@@ -33,16 +33,8 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Topic :: Software Development :: Libraries'
     ],
-install_requires=[
-        'Twisted>=13.1.0',
-        'w3lib>=1.17.0',
-        'queuelib',
-        'lxml',
-        'pyOpenSSL',
-        'cssselect>=0.9',
-        'six>=1.5.2',
-        'parsel>=1.1',
-        'PyDispatcher>=2.0.5',
-        'service_identity',
+    install_requires=[
+        'nltk==3.4',
+        'scikit-learn==0.20.2',
     ]
 )

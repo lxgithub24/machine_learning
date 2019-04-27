@@ -1,0 +1,48 @@
+Metadata-Version: 1.2
+Name: alibaba-suanfa
+Version: 1.0
+Summary: 应聘常考算法
+Home-page: https://github.com/lxgithub24/leetcode.git
+Author: Hiang
+Author-email: xiang_liu2013@163.com
+Maintainer: hiang
+Maintainer-email: xiang_liu2013@163.com
+License: BSD License
+Description: algorithm
+        ==================
+        
+        
+        `Tornado <http://www.tornadoweb.org>`_ is a Python web framework and
+        asynchronous networking library, originally developed at `FriendFeed
+        <http://friendfeed.com>`_.  By using non-blocking network I/O, Tornado
+        can scale to tens of thousands of open connections, making it ideal for
+        `long polling <http://en.wikipedia.org/wiki/Push_technology#Long_Polling>`_,
+        `WebSockets <http://en.wikipedia.org/wiki/WebSocket>`_, and other
+        applications that require a long-lived connection to each user.
+        
+        Hello, world
+        ------------
+        
+        This example does not use any of algorithm's asynchronous features; for
+        that see this `simple chat room
+        https://github.com/lxgithub24/leetcode.git`_.
+        
+        Documentation
+        -------------
+        
+        Documentation and links to additional resources are available at
+        https://github.com/lxgithub24/leetcode.git
+Platform: all
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: Implementation
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development :: Libraries
