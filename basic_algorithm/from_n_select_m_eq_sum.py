@@ -50,7 +50,7 @@ tmp_sum = 0
 
 for j in range(_len):
     tmp_sum += a[j]
-# print('test_cangjie_gateway_interface', tmp_sum)
+print('test_deviancecangjie_gateway_interface', tmp_sum)
 # 当前序列和和目标值差距
 min_value = abs(sum - tmp_sum)
 # 和最接近的初始值

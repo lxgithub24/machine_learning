@@ -6,7 +6,6 @@
 
 # -*- coding: utf-8 -*-
 
-import jieba
 import jieba.analyse
 
 jieba.suggest_freq('沙瑞金', True)
@@ -46,8 +45,7 @@ with open('./data/in_the_name_of_people.txt', encoding='utf-8') as f:
 from gensim.models import word2vec
 
 sentences = word2vec.LineSentence('./data/in_the_name_of_people_segment.txt')
-
-model = word2vec.Word2Vec(sentences, hs=0, min_count=1, window=3, size=100)
+model = word2vec.Word2Vec(sentences, hs=1, negative=0, min_count=1, window=3, size=100, sg=1)
 # 第一个是最常用的，找出某一个词向量最相近的词集合，
 req_count = 5
 for key in model.wv.similar_by_word('沙瑞金', topn=100):
@@ -62,3 +60,5 @@ print(model.wv.similarity('沙瑞金', '高育良'))
 print(model.wv.similarity('李达康', '王大路'))
 # 第三个应用是找出不同类的词，这里给出了人物分类题：
 print(model.wv.doesnt_match(u"沙瑞金 高育良 李达康 刘庆祝".split()))
+print('='*35)
+print(model.accuracy())
