@@ -6,7 +6,11 @@ import torch
 import torch.autograd as autograd
 import torch.nn as nn
 import torch.optim as optim
-
+from algorithm.bilstm_crf.utils import argmax, log_sum_exp
+START_TAG = "<START>"
+STOP_TAG = "<STOP>"
+EMBEDDING_DIM = 5
+HIDDEN_DIM = 4
 torch.manual_seed(1)
 class BiLSTM_CRF(nn.Module):
 

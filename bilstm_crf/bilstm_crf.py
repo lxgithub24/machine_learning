@@ -7,7 +7,7 @@ import torch.autograd as autograd
 import torch.nn as nn
 import torch.optim as optim
 from algorithm.bilstm_crf.BiLSTM_CRF_MODEL import BiLSTM_CRF
-from algorithm.bilstm_crf.BiLSTM_CRF_MODEL import prepare_sequence
+from algorithm.bilstm_crf.utils import prepare_sequence
 
 torch.manual_seed(1)
 START_TAG = "<START>"
