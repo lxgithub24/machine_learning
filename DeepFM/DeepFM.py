@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2019/9/12 18:43
 # @Author  : RIO
-# @desc: 文章地址：https://www.cnblogs.com/wkang/p/9881921.html
+# @desc: 文章地址：https://www.cnblogs.com/wkang/p/9881921.html， 参考：https://github.com/ChenglongChen/tensorflow-DeepFM
 import tensorflow as tf
 import numpy as np
 import sys
@@ -33,6 +33,7 @@ class DeepFM():
         self.dim_of_layer = args.dim_of_layer
         self.l2_regularizer = args.l2_regularizer
         self.learning_rate = args.learning_rate
+        self.init_graph()
         pass
 
     def init_graph(self):
