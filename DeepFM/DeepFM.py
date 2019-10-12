@@ -40,7 +40,7 @@ class DeepFM():
         # 初始化喂入参数
         self.feature_index = tf.placeholder(tf.int32, shape=[None, None], name='feature_index')
         self.feature_value = tf.placeholder(tf.int32, shape=[None, None], name='feature_value')
-        self.label = tf.placeholder(tf.int32, shape=[None, None], name='label')
+        self.label = tf.placeholder(tf.int32, shape=[None], name='label')
         # -------------------------------------------------FM部分初始化----------------------------------------------------------
         # FM部分
         # w:一次项系数
@@ -126,7 +126,7 @@ class DeepFM():
             self.loss += tf.contrib.layers.l2_regularizer(self.l2_regularizer)(self.weight['layer_{}'.format(i)])
         self.loss += tf.contrib.layers.l2_regularizer(self.l2_regularizer)(self.weight['last_layer'])
         # 获得梯度下降优化器
-        gradient_descent_optimizer = tf.train.sdca_optimizer(self.learning_rate)
+        gradient_descent_optimizer = tf.train.GradientDescentOptimizer(self.learning_rate)
         self.global_step = tf.Variable(0, trainable=False)
         train_var = tf.trainable_variables()
         clip_gradients, _ = tf.clip_by_global_norm(tf.gradients(self.loss, train_var), 5)

@@ -3,5 +3,7 @@
 # @Author  : RIO
 # @desc: TODO:DESC
 
-for i in range(2, 19):
-    print(i)
+with open('./tmp', 'r') as fp:
+    for data in fp:
+        split = data.split()
+        print(split)

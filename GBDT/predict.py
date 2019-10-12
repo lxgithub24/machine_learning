@@ -1,15 +1,7 @@
 # -*- coding: utf-8 -*-
-"""
--------------------------------------------------
-   File Name：     predict_cdz
-   Description :
-   Author :       DrZ
-   date：          2018/8/25
--------------------------------------------------
-   Change Activity:
-                   2018/8/25:
--------------------------------------------------
-"""
+# @Time    : 2019/9/5 11:57
+# @Author  : RIO
+# @desc: TODO:DESC
 import numpy as np
 import pandas as pd
 from sklearn.externals import joblib

@@ -2,6 +2,12 @@
 # @Time    : 2019/8/24 20:39
 # @Author  : RIO
 # @desc: pair-wise ranking思想。转载：https://www.deeplearn.me/1982.html
+"""
+数据说明：每行
+第一列：
+第二列：选择的id
+后面列：每个特征对该id的作用大小
+"""
 import tensorflow as tf
 import numpy as np
 
@@ -16,48 +22,46 @@ feature_num = 46
 h1_num = 10
 
 
-def extractFeatures(split):
-    '''
+def extractFeatures(data_list):
+    """
     获取特征
-    '''
+    """
     features = []
     for i in range(2, 48):
-        features.append(float(split[i].split(':')[1]))
+        features.append(float(data_list[i].split(':')[1]))
     return features
 
 
-def extractQueryData(split):
-    '''
-    获取以下数据 quryid documentid 等
+def extractQueryData(data_list):
+    """
+    获取以下数据 queryid documentid 等
     Format:
-
-    '''
-    queryFeatures = [split[1].split(':')[1]]
-    queryFeatures.append(split[50])
-    queryFeatures.append(split[53])
-    queryFeatures.append(split[56])
-
+    """
+    queryFeatures = [data_list[1].split(':')[1]]
+    queryFeatures.append(data_list[50])
+    queryFeatures.append(data_list[53])
+    queryFeatures.append(data_list[56])
     return queryFeatures
 
 
 def get_microsoft_data():
-    '''
+    """
     获取基础样本特征数据
     :return:
-    '''
+    """
     with open('/Users/leiyang/RankNet/Data/train.txt', 'r') as fp:
         for data in fp:
-            split = data.split()
-            y_train.append(int(split[0]))
-            X_train.append(extractFeatures(split))
-            Query.append(extractQueryData(split))
+            data_list = data.split()
+            y_train.append(int(data_list[0]))
+            X_train.append(extractFeatures(data_list))
+            Query.append(extractQueryData(data_list))
 
 
 def get_pair_feature(y_train, Query):
-    '''
+    """
     获取组合样本特征
     :return:
-    '''
+    """
     pairs = []
     tmp_x0 = []
     tmp_x1 = []
