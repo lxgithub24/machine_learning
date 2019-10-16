@@ -49,7 +49,7 @@ def get_microsoft_data():
     获取基础样本特征数据
     :return:
     """
-    with open('/Users/leiyang/RankNet/Data/train.txt', 'r') as fp:
+    with open('./data/train.txt', 'r') as fp:
         for data in fp:
             data_list = data.split()
             y_train.append(int(data_list[0]))

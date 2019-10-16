@@ -97,6 +97,6 @@ class prank(object):
 
 if __name__ == '__main__':
     pprank = prank()
-    pprank.readFile('/Users/leiyang/Downloads/Fold1/test.txt')
+    pprank.readFile('./data/test.txt')
     pprank.learn_to_rank()
     pprank.predict_label()
