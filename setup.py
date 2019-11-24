@@ -34,7 +34,7 @@ setup(
         'Topic :: Software Development :: Libraries'
     ],
     install_requires=[
-        'nltk==3.4',
+        'nltk==3.4.5',
         'scikit-learn==0.20.2',
     ]
 )
