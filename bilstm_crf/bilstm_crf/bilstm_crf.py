@@ -18,8 +18,8 @@ training_data = [(
     "the wall street journal reported today that apple corporation made money".split(),
     "B I I I O O O B I O O".split()
 ), (
-    "georgia tech is a university in georgia".split(),
-    "B I O O O O B".split()
+    "the georgia tech is a university in georgia".split(),
+    "B I I O O O O B".split()
 )]
 
 word_to_ix = {}
@@ -33,11 +33,12 @@ tag_to_ix = {"B": 0, "I": 1, "O": 2, START_TAG: 3, STOP_TAG: 4}
 model = BiLSTM_CRF(len(word_to_ix), tag_to_ix, EMBEDDING_DIM, HIDDEN_DIM)
 optimizer = optim.SGD(model.parameters(), lr=0.01, weight_decay=1e-4)
 
-# Check predictions before training
-with torch.no_grad():
-    precheck_sent = prepare_sequence(training_data[0][0], word_to_ix)
-    precheck_tags = torch.tensor([tag_to_ix[t] for t in training_data[0][1]], dtype=torch.long)
-    print(model(precheck_sent))
+# # Check predictions before training
+# with torch.no_grad():
+#     precheck_sent = prepare_sequence(training_data[0][0], word_to_ix)
+#     precheck_tags = torch.tensor(
+#         [tag_to_ix[t] for t in training_data[0][1]], dtype=torch.long)
+#     print(model(precheck_sent))
 
 # Make sure prepare_sequence from earlier in the LSTM section is loaded
 for epoch in range(
@@ -65,3 +66,4 @@ with torch.no_grad():
     precheck_sent = prepare_sequence(training_data[0][0], word_to_ix)
     print(model(precheck_sent))
 # We got it!
+print('end')

@@ -10,6 +10,8 @@ STOP_TAG = "<STOP>"
 EMBEDDING_DIM = 5
 HIDDEN_DIM = 4
 torch.manual_seed(1)
+
+
 class BiLSTM_CRF(nn.Module):
 
     def __init__(self, vocab_size, tag_to_ix, embedding_dim, hidden_dim):
@@ -29,8 +31,7 @@ class BiLSTM_CRF(nn.Module):
 
         # Matrix of transition parameters.  Entry i,j is the score of
         # transitioning *to* i *from* j.
-        self.transitions = nn.Parameter(
-            torch.randn(self.tagset_size, self.tagset_size))
+        self.transitions = nn.Parameter(torch.randn(self.tagset_size, self.tagset_size))
 
         # These two statements enforce the constraint that we never transfer
         # to the start tag and we never transfer from the stop tag
@@ -85,7 +86,8 @@ class BiLSTM_CRF(nn.Module):
     def _score_sentence(self, feats, tags):
         # Gives the score of a provided tag sequence
         score = torch.zeros(1)
-        tags = torch.cat([torch.tensor([self.tag_to_ix[START_TAG]], dtype=torch.long), tags])
+        tags = torch.cat(
+            [torch.tensor([self.tag_to_ix[START_TAG]], dtype=torch.long), tags])
         for i, feat in enumerate(feats):
             score = score + \
                 self.transitions[tags[i + 1], tags[i]] + feat[tags[i + 1]]
